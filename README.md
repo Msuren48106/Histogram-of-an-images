@@ -36,17 +36,15 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-image = cv2.imread('rose.jpg')
-
+image = cv2.imread('rose.jpeg')
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
 hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 
+
 equalized_image = cv2.equalizeHist(gray_image)
-
 hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
-
 plt.figure(figsize=(10, 7))
+
 
 plt.subplot(2, 2, 1)
 plt.imshow(gray_image, cmap='gray')
@@ -58,11 +56,11 @@ plt.imshow(equalized_image, cmap='gray')
 plt.title('Equalized Image')
 plt.axis('off')
 
+
 plt.subplot(2, 2, 3)
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
-
 
 
 plt.subplot(2, 2, 4)
@@ -75,10 +73,10 @@ plt.show()
 
 ```
 ## Output:
-<img width="332" height="307" alt="image" src="https://github.com/user-attachments/assets/d1baf61f-065e-48a8-8aba-5f4628a6c831" />
-<img width="284" height="302" alt="image" src="https://github.com/user-attachments/assets/a1242f92-cddc-42e2-8f9d-a7b7cf150b23" />
-<img width="447" height="346" alt="image" src="https://github.com/user-attachments/assets/729cb68c-523f-4f23-8603-b76463361082" />
-<img width="431" height="348" alt="image" src="https://github.com/user-attachments/assets/0701cd19-dd00-47cd-b2ea-b4d28b35983c" />
+<img width="321" height="264" alt="Screenshot 2026-02-12 101949" src="https://github.com/user-attachments/assets/7f6fb9c6-8718-4b85-b006-7c43c234c0fd" />
+<img width="210" height="269" alt="Screenshot 2026-02-12 101954" src="https://github.com/user-attachments/assets/efc3e606-c971-415f-bef8-f5b9bf034bcc" />
+<img width="416" height="302" alt="Screenshot 2026-02-12 102000" src="https://github.com/user-attachments/assets/0bd3e021-5ccb-4f90-9e37-b36e82490431" />
+<img width="523" height="292" alt="Screenshot 2026-02-12 102022" src="https://github.com/user-attachments/assets/3bb096ad-f3a3-4bcc-8107-8fd6824f001b" />
 
 
 
